@@ -54,6 +54,40 @@ El proyecto sigue una arquitectura limpia y modular, separando las responsabilid
 *   **`ui`:** Contiene los componentes de la interfaz de usuario.
     *   **`theme`:** Contiene los temas de la aplicación.
 
+## Arquitectura y Patrones de Diseño
+
+Este proyecto sigue una arquitectura limpia y utiliza varios patrones de diseño para garantizar la calidad, la mantenibilidad y la capacidad de prueba del código.
+
+### Arquitectura Limpia (Arquitectura en Capas)
+
+**Decisión:** El proyecto está estructurado en capas distintas: `core`, `data`, `domain`, `features`, `di` y `ui`.
+
+**Razonamiento:** La Arquitectura Limpia promueve la separación de responsabilidades, la capacidad de prueba y el mantenimiento al aislar diferentes partes de la aplicación. Cada capa tiene una responsabilidad específica y solo interactúa con las capas adyacentes, lo que facilita la modificación y la evolución del código.
+
+### Patrón de Repositorio
+
+**Decisión:** Se utilizan repositorios para abstraer la lógica de acceso a datos.
+
+**Razonamiento:** Los repositorios proporcionan una interfaz limpia para interactuar con las fuentes de datos (locales o remotas), ocultando los detalles de implementación del resto de la aplicación. Esto permite cambiar la fuente de datos (por ejemplo, de una base de datos local a un servicio web) sin afectar a otras partes del código.
+
+### Casos de Uso (Interactors)
+
+**Decisión:** Se utilizan casos de uso para encapsular la lógica de negocio.
+
+**Razonamiento:** Los casos de uso definen acciones específicas que se pueden realizar en la aplicación, promoviendo una clara separación entre la lógica de negocio y el acceso a datos. Cada caso de uso representa una tarea o interacción específica del usuario, lo que facilita la comprensión y la prueba de la lógica de negocio.
+
+### Inyección de Dependencias (Hilt)
+
+**Decisión:** Se utiliza Hilt para la inyección de dependencias.
+
+**Razonamiento:** Hilt simplifica la inyección de dependencias en aplicaciones Android, reduciendo el código repetitivo y mejorando la capacidad de prueba. Hilt gestiona la creación y el ciclo de vida de las dependencias, lo que facilita la gestión de las dependencias en toda la aplicación.
+
+### Modelo-Vista-ViewModel (MVVM)
+
+**Decisión:** MVVM se utiliza como el patrón arquitectónico para la capa de la interfaz de usuario.
+
+**Razonamiento:** MVVM separa la interfaz de usuario de los datos y la lógica subyacentes, haciendo que la interfaz de usuario sea más fácil de probar y mantener. El ViewModel expone los datos y las acciones a la Vista, pero no tiene conocimiento de la Vista en sí, lo que permite probar la lógica de la interfaz de usuario de forma independiente.
+
 ## Instalación
 
 1.  Clona el repositorio:
@@ -67,6 +101,11 @@ El proyecto sigue una arquitectura limpia y modular, separando las responsabilid
 2.  Explora la lista de Pokémon en la pantalla principal.
 3.  Selecciona un Pokémon para ver sus detalles.
 4.  Navega entre las diferentes pantallas para explorar más información.
+
+## Screnshots
+![image](https://github.com/user-attachments/assets/85cb8ebb-154f-4f0b-8f55-509e7322ed08)
+![image](https://github.com/user-attachments/assets/d6466b1c-dad7-457d-870e-f75942395dca)
+
 
 ## Créditos
 
